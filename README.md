@@ -1,13 +1,17 @@
-`cspan-crawler` will crawl a c-span video page for you and return the complete transcript in the form:
+`oyez-crawler` will crawl an video page for you and return the complete transcript in the form:
 ```javascript
 [
   {
     timeStart: "",
+    timeEnd: "",
+    totalTime: "",
     speaker: "",
     text: ""
   },
   {
     timeStart: "",
+    timeEnd: "",
+    totalTime: "",
     speaker: "",
     text: ""
   },
