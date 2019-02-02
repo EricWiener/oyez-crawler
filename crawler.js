@@ -150,9 +150,7 @@ async function getCases(page, url, term) {
     }
     // return cases;
 }
-git filter-branch --force --index-filter \
-'git rm --cached --ignore-unmatch node_modules/' \
---prune-empty --tag-name-filter cat -- --all
+
 // identifies the media links
 // calls the
 async function getCaseTranscripts(page, url) {
