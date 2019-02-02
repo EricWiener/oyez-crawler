@@ -1,1 +1,0 @@
-{"caseName":"United States v. Davis","caseLink":"https://www.oyez.org/cases/2018/18-431","caseTranscripts":[],"term":"2018"}

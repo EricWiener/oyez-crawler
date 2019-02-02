@@ -1,1 +1,0 @@
-{"caseName":"Spears v. United States","caseLink":"https://www.oyez.org/cases/2008/08-5721","caseTranscripts":[],"term":"2008"}

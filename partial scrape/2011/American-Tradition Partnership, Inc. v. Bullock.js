@@ -1,1 +1,0 @@
-{"caseName":"American Tradition Partnership, Inc. v. Bullock","caseLink":"https://www.oyez.org/cases/2011/11-1179","caseTranscripts":[],"term":"2011"}

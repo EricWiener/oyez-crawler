@@ -1,1 +1,0 @@
-{"caseName":"PDR Network, LLC v. Carlton & Harris Chiropractic Inc.","caseLink":"https://www.oyez.org/cases/2018/17-1705","caseTranscripts":[],"term":"2018"}

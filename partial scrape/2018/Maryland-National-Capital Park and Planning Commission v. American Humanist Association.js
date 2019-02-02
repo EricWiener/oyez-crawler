@@ -1,1 +1,0 @@
-{"caseName":"Maryland-National Capital Park and Planning Commission v. American Humanist Association","caseLink":"https://www.oyez.org/cases/2018/18-18","caseTranscripts":[],"term":"2018"}

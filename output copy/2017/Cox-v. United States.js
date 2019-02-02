@@ -1,1 +1,0 @@
-{"caseName":"Cox v. United States","caseLink":"https://www.oyez.org/cases/2017/16-1017","caseTranscripts":[],"term":"2017"}

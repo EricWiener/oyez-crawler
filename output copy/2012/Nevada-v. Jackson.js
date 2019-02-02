@@ -1,1 +1,0 @@
-{"caseName":"Nevada v. Jackson","caseLink":"https://www.oyez.org/cases/2012/12-694","caseTranscripts":[],"term":"2012"}

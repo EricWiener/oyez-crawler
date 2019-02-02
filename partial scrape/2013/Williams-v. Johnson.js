@@ -1,1 +1,0 @@
-{"caseName":"Williams v. Johnson","caseLink":"https://www.oyez.org/cases/2013/13-9085","caseTranscripts":[],"term":"2013"}

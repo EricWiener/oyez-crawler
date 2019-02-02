@@ -1,1 +1,0 @@
-{"caseName":"Coleman v. Johnson","caseLink":"https://www.oyez.org/cases/2011/11-1053","caseTranscripts":[],"term":"2011"}

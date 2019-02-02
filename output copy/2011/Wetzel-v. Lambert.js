@@ -1,1 +1,0 @@
-{"caseName":"Wetzel v. Lambert","caseLink":"https://www.oyez.org/cases/2011/11-38","caseTranscripts":[],"term":"2011"}

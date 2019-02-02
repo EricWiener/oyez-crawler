@@ -1,1 +1,0 @@
-{"caseName":"Woods v. Etherton","caseLink":"https://www.oyez.org/cases/2015/15-723","caseTranscripts":[],"term":"2015"}

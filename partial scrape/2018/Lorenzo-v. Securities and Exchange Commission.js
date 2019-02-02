@@ -1,1 +1,0 @@
-{"caseName":"Lorenzo v. Securities and Exchange Commission","caseLink":"https://www.oyez.org/cases/2018/17-1077","caseTranscripts":[{"transcriptTitle":"Oral Argument - December 03, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24784","transcript":[]}],"term":"2018"}

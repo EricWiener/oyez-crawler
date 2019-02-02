@@ -1,1 +1,0 @@
-{"caseName":"Bobby v. Van Hook","caseLink":"https://www.oyez.org/cases/2009/09-144","caseTranscripts":[],"term":"2009"}

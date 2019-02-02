@@ -1,1 +1,0 @@
-{"caseName":"Taggart v. Lorenzen","caseLink":"https://www.oyez.org/cases/2018/18-489","caseTranscripts":[],"term":"2018"}

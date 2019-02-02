@@ -1,1 +1,0 @@
-{"caseName":"Herrera v. Wyoming","caseLink":"https://www.oyez.org/cases/2018/17-532","caseTranscripts":[{"transcriptTitle":"Oral Argument - January 08, 2019","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24788","transcript":[]}],"term":"2018"}

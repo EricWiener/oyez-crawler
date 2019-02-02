@@ -1,1 +1,0 @@
-{"caseName":"Moore v. United States","caseLink":"https://www.oyez.org/cases/2008/07-10689","caseTranscripts":[],"term":"2008"}

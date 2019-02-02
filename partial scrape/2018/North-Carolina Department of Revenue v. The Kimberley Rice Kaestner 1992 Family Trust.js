@@ -1,1 +1,0 @@
-{"caseName":"North Carolina Department of Revenue v. The Kimberley Rice Kaestner 1992 Family Trust","caseLink":"https://www.oyez.org/cases/2018/18-457","caseTranscripts":[],"term":"2018"}

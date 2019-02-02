@@ -1,1 +1,0 @@
-{"caseName":"Madison County v. Oneida Indian Nation","caseLink":"https://www.oyez.org/cases/2010/10-72","caseTranscripts":[],"term":"2010"}

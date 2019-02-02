@@ -1,1 +1,0 @@
-{"caseName":"Cavazos v. Smith","caseLink":"https://www.oyez.org/cases/2011/10-1115","caseTranscripts":[],"term":"2011"}

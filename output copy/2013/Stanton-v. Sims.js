@@ -1,1 +1,0 @@
-{"caseName":"Stanton v. Sims","caseLink":"https://www.oyez.org/cases/2013/12-1217","caseTranscripts":[],"term":"2013"}

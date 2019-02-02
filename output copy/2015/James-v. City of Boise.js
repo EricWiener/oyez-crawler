@@ -1,1 +1,0 @@
-{"caseName":"James v. City of Boise","caseLink":"https://www.oyez.org/cases/2015/15-493","caseTranscripts":[],"term":"2015"}
