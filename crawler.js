@@ -91,9 +91,10 @@ async function scrapeOyez() {
         // .each loop doesn't support async
         // let there to handle async looping
         // https://codeburst.io/asynchronous-code-inside-an-array-loop-c5d704006c99
-        for (let x = 0; x < results.length; ++x) {
+        for (let x = 0; x < results.length && parseInt(results[x].term) >= 1956; ++x) {
             console.log("Term: " + (x+1) + "/" + results.length + ": " + results[x].term);
             await getCases(page, results[x].termLink, results[x].term);
+
             // cases = await getCases(page, results[x].termLink, results[x].term);
             // results[x].cases = await getCases(page, results[x].termLink);
 
