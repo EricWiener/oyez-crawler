@@ -1,1 +1,0 @@
-{"caseName":"Fourth Estate Public Benefit Corp. v. Wall-Street.com","caseLink":"https://www.oyez.org/cases/2018/17-571","caseTranscripts":[{"transcriptTitle":"Oral Argument - January 08, 2019","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24789","transcript":[]}],"term":"2018"}

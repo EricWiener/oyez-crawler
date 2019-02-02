@@ -1,1 +1,0 @@
-{"caseName":"Bosse v. Oklahoma","caseLink":"https://www.oyez.org/cases/2016/15-9173","caseTranscripts":[],"term":"2016"}

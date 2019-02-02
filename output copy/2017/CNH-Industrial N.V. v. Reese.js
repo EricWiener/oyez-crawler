@@ -1,1 +1,0 @@
-{"caseName":"CNH Industrial N.V. v. Reese","caseLink":"https://www.oyez.org/cases/2017/17-515","caseTranscripts":[],"term":"2017"}

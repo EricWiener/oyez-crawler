@@ -1,1 +1,0 @@
-{"caseName":"Grady v. North Carolina","caseLink":"https://www.oyez.org/cases/2014/14-593","caseTranscripts":[],"term":"2014"}

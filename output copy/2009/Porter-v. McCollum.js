@@ -1,1 +1,0 @@
-{"caseName":"Porter v. McCollum","caseLink":"https://www.oyez.org/cases/2009/08-10537","caseTranscripts":[],"term":"2009"}

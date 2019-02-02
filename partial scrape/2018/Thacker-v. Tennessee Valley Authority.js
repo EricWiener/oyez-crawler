@@ -1,1 +1,0 @@
-{"caseName":"Thacker v. Tennessee Valley Authority","caseLink":"https://www.oyez.org/cases/2018/17-1201","caseTranscripts":[{"transcriptTitle":"Oral Argument - January 14, 2019","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24796","transcript":[]}],"term":"2018"}

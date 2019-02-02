@@ -1,1 +1,0 @@
-{"caseName":"Michigan v. Fisher","caseLink":"https://www.oyez.org/cases/2009/09-91","caseTranscripts":[],"term":"2009"}

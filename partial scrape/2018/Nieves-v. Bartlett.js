@@ -1,1 +1,0 @@
-{"caseName":"Nieves v. Bartlett","caseLink":"https://www.oyez.org/cases/2018/17-1174","caseTranscripts":[{"transcriptTitle":"Oral Argument - November 26, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24779","transcript":[]}],"term":"2018"}

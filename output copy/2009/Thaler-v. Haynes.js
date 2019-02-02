@@ -1,1 +1,0 @@
-{"caseName":"Thaler v. Haynes","caseLink":"https://www.oyez.org/cases/2009/09-273","caseTranscripts":[],"term":"2009"}

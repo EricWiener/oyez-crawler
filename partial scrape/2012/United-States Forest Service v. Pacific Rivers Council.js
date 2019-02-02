@@ -1,1 +1,0 @@
-{"caseName":"United States Forest Service v. Pacific Rivers Council","caseLink":"https://www.oyez.org/cases/2012/12-623","term":"2012"}

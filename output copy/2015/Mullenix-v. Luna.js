@@ -1,1 +1,0 @@
-{"caseName":"Mullenix v. Luna","caseLink":"https://www.oyez.org/cases/2015/14-1143","caseTranscripts":[],"term":"2015"}

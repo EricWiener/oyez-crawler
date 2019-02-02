@@ -1,1 +1,0 @@
-{"caseName":"Parker v. Matthews","caseLink":"https://www.oyez.org/cases/2011/11-845","caseTranscripts":[],"term":"2011"}

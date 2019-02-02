@@ -1,1 +1,0 @@
-{"caseName":"City of Escondido v. Emmons","caseLink":"https://www.oyez.org/cases/2018/17-1660","caseTranscripts":[],"term":"2018"}

@@ -1,1 +1,0 @@
-{"caseName":"Sturgeon v. Frost","caseLink":"https://www.oyez.org/cases/2018/17-949","caseTranscripts":[{"transcriptTitle":"Oral Argument - November 05, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24634","transcript":[]}],"term":"2018"}

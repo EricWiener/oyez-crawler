@@ -1,1 +1,0 @@
-{"caseName":"Smith v. Berryhill","caseLink":"https://www.oyez.org/cases/2018/17-1606","caseTranscripts":[],"term":"2018"}

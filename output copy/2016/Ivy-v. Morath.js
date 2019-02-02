@@ -1,1 +1,0 @@
-{"caseName":"Ivy v. Morath","caseLink":"https://www.oyez.org/cases/2016/15-486","caseTranscripts":[],"term":"2016"}

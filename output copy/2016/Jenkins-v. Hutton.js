@@ -1,1 +1,0 @@
-{"caseName":"Jenkins v. Hutton","caseLink":"https://www.oyez.org/cases/2016/16-1116","caseTranscripts":[],"term":"2016"}

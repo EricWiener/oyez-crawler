@@ -1,1 +1,0 @@
-{"caseName":"Sexton v. Beaudreaux","caseLink":"https://www.oyez.org/cases/2017/17-1106","caseTranscripts":[],"term":"2017"}

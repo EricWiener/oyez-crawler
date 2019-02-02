@@ -1,1 +1,0 @@
-{"caseName":"United States v. Stitt","caseLink":"https://www.oyez.org/cases/2018/17-765","caseTranscripts":[{"transcriptTitle":"Oral Argument - October 09, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24621","transcript":[]}],"term":"2018"}

@@ -1,1 +1,0 @@
-{"caseName":"Quarles v. United States","caseLink":"https://www.oyez.org/cases/2018/17-778","caseTranscripts":[],"term":"2018"}

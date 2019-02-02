@@ -1,1 +1,0 @@
-{"caseName":"Magner v. Gallagher","caseLink":"https://www.oyez.org/cases/2011/10-1032","term":"2011"}

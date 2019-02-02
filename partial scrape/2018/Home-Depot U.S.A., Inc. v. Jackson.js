@@ -1,1 +1,0 @@
-{"caseName":"Home Depot U.S.A., Inc. v. Jackson","caseLink":"https://www.oyez.org/cases/2018/17-1471","caseTranscripts":[{"transcriptTitle":"Oral Argument - January 15, 2019","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24798","transcript":[]}],"term":"2018"}

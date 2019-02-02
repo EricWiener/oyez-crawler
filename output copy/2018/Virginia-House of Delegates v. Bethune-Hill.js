@@ -1,1 +1,0 @@
-{"caseName":"Virginia House of Delegates v. Bethune-Hill","caseLink":"https://www.oyez.org/cases/2018/18-281","caseTranscripts":[],"term":"2018"}

@@ -1,1 +1,0 @@
-{"caseName":"Maryland v. Kulbicki","caseLink":"https://www.oyez.org/cases/2015/14-848","caseTranscripts":[],"term":"2015"}

@@ -1,1 +1,0 @@
-{"caseName":"Garza v. Idaho","caseLink":"https://www.oyez.org/cases/2018/17-1026","caseTranscripts":[{"transcriptTitle":"Oral Argument - October 30, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24627","transcript":[]}],"term":"2018"}

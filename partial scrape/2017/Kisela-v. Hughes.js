@@ -1,1 +1,0 @@
-{"caseName":"Kisela v. Hughes","caseLink":"https://www.oyez.org/cases/2017/17-467","caseTranscripts":[],"term":"2017"}

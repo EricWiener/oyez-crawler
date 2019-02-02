@@ -1,1 +1,0 @@
-{"caseName":"Washington State Department of Licensing v. Cougar Den, Inc.","caseLink":"https://www.oyez.org/cases/2018/16-1498","caseTranscripts":[{"transcriptTitle":"Oral Argument - October 30, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24625","transcript":[]}],"term":"2018"}

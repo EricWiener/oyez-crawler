@@ -1,1 +1,0 @@
-{"caseName":"Rucho v. Common Cause","caseLink":"https://www.oyez.org/cases/2018/18-422","caseTranscripts":[],"term":"2018"}

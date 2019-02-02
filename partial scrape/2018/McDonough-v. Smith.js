@@ -1,1 +1,0 @@
-{"caseName":"McDonough v. Smith","caseLink":"https://www.oyez.org/cases/2018/18-485","caseTranscripts":[],"term":"2018"}

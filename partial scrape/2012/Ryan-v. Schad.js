@@ -1,1 +1,0 @@
-{"caseName":"Ryan v. Schad","caseLink":"https://www.oyez.org/cases/2012/12-1084","caseTranscripts":[],"term":"2012"}

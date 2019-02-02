@@ -1,1 +1,0 @@
-{"caseName":"Rehaif v. United States","caseLink":"https://www.oyez.org/cases/2018/17-9560","caseTranscripts":[],"term":"2018"}

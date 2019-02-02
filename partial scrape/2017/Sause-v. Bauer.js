@@ -1,1 +1,0 @@
-{"caseName":"Sause v. Bauer","caseLink":"https://www.oyez.org/cases/2017/17-742","caseTranscripts":[],"term":"2017"}

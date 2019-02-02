@@ -1,1 +1,0 @@
-{"caseName":"Montana v. Wyoming","caseLink":"https://www.oyez.org/cases/2017/137-orig","caseTranscripts":[],"term":"2017"}

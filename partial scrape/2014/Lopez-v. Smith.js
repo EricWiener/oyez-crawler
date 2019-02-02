@@ -1,1 +1,0 @@
-{"caseName":"Lopez v. Smith","caseLink":"https://www.oyez.org/cases/2014/13-946","caseTranscripts":[],"term":"2014"}

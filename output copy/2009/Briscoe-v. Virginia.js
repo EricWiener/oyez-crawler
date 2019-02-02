@@ -1,1 +1,0 @@
-{"caseName":"Briscoe v. Virginia","caseLink":"https://www.oyez.org/cases/2009/07-11191","caseTranscripts":[{"transcriptTitle":"Oral Argument - January 11, 2010","transcriptLink":"https://apps.oyez.org/player/#/roberts4/oral_argument_audio/22191","transcript":[]}],"term":"2009"}
