@@ -116,38 +116,43 @@ async function scrapeOyez() {
 // recieves url of the term page
 // returns list of all cases on page
 async function getCases(page, url, term) {
-    let cases = [];
-    await page.goto(url); // goes to the term page
-    await page.waitForSelector("body > div > div > div.page.ng-scope > main > article > div > ng-include > ul > li:nth-child(1) > h2 > a");
-    let html = await page.content();
+    try {
+        let cases = [];
+        await page.goto(url); // goes to the term page
+        await page.waitForSelector("body > div > div > div.page.ng-scope > main > article > div > ng-include > ul > li:nth-child(1) > h2 > a");
+        let html = await page.content();
 
-    // caseName: "Air and Liquid Systems Corp. v. Devries",
-    // caseFullName: "AIR AND LIQUID SYSTEMS CORP., ET AL., Petitioners, v. ROBERTA G. DeVRIES, INDIVIDUALLY AND AS ADMINISTRATRIX OF THE ESTATE OF JOHN B. DeVRIES, DECEASED, ET AL., Respondents"
-    // caseLink: "https://www.oyez.org/cases/2018/17-1104"
-    $("main article div ng-include ul li", html).each(function() {
-        caseName = $(this).find('h2 a').text().trim();
-        caseLink = "https://www.oyez.org/" + $(this).find('h2 a').attr('href');
+        // caseName: "Air and Liquid Systems Corp. v. Devries",
+        // caseFullName: "AIR AND LIQUID SYSTEMS CORP., ET AL., Petitioners, v. ROBERTA G. DeVRIES, INDIVIDUALLY AND AS ADMINISTRATRIX OF THE ESTATE OF JOHN B. DeVRIES, DECEASED, ET AL., Respondents"
+        // caseLink: "https://www.oyez.org/cases/2018/17-1104"
+        $("main article div ng-include ul li", html).each(function() {
+            caseName = $(this).find('h2 a').text().trim();
+            caseLink = "https://www.oyez.org/" + $(this).find('h2 a').attr('href');
 
-        cases.push({
-            "caseName": caseName,
-            "caseLink": caseLink,
+            cases.push({
+                "caseName": caseName,
+                "caseLink": caseLink,
+            });
         });
-    });
 
-    // loop through case links
-    // gets the transcripts for each case and appends to case object
-    // this is done outside of .each loop because
-    // .each loop doesn't support async
-    for (let x = 0; x < cases.length; ++x) {
-        console.log("Cases: " + (x+1) + "/" + cases.length + ": " + cases[x].caseName);
-        let tempCase = {"term": term, "caseName": cases[x].caseName, "caseLink": cases[x].caseLink};
-        tempCase.caseTranscripts = await getCaseTranscripts(page, cases[x].caseLink);
-        writeFile.sync("output/" + term + "/" + cases[x].caseName.replace(" ", "-") + ".js", JSON.stringify(tempCase));
+        // loop through case links
+        // gets the transcripts for each case and appends to case object
+        // this is done outside of .each loop because
+        // .each loop doesn't support async
+        for (let x = 0; x < cases.length; ++x) {
+            console.log("Cases: " + (x+1) + "/" + cases.length + ": " + cases[x].caseName);
+            let tempCase = {"term": term, "caseName": cases[x].caseName, "caseLink": cases[x].caseLink};
+            tempCase.caseTranscripts = await getCaseTranscripts(page, cases[x].caseLink);
+            writeFile.sync("output/" + term + "/" + cases[x].caseName.replace(" ", "-") + ".js", JSON.stringify(tempCase));
+        }
+    } catch(error){
+        console.log("An error ocurred in getCases() for " + term + ": " + error);
     }
-
     // return cases;
 }
-
+git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch node_modules/' \
+--prune-empty --tag-name-filter cat -- --all
 // identifies the media links
 // calls the
 async function getCaseTranscripts(page, url) {
