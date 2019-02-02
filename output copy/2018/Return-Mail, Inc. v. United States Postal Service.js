@@ -1,0 +1,1 @@
+{"caseName":"Return Mail, Inc. v. United States Postal Service","caseLink":"https://www.oyez.org/cases/2018/17-1594","caseTranscripts":[],"term":"2018"}

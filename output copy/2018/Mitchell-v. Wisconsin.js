@@ -1,0 +1,1 @@
+{"caseName":"Mitchell v. Wisconsin","caseLink":"https://www.oyez.org/cases/2018/18-6210","caseTranscripts":[]}

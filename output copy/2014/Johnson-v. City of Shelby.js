@@ -1,0 +1,1 @@
+{"caseName":"Johnson v. City of Shelby","caseLink":"https://www.oyez.org/cases/2014/13-1318","caseTranscripts":[],"term":"2014"}

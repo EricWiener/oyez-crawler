@@ -1,0 +1,1 @@
+{"caseName":"Lynch v. Arizona","caseLink":"https://www.oyez.org/cases/2015/15-8366","caseTranscripts":[],"term":"2015"}

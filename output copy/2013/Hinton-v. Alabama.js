@@ -1,0 +1,1 @@
+{"caseName":"Hinton v. Alabama","caseLink":"https://www.oyez.org/cases/2013/13-6440","caseTranscripts":[],"term":"2013"}

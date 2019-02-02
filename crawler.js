@@ -140,9 +140,9 @@ async function getCases(page, url, term) {
     // .each loop doesn't support async
     for (let x = 0; x < cases.length; ++x) {
         console.log("Cases: " + (x+1) + "/" + cases.length + ": " + cases[x].caseName);
-        let tempCase = cases[x];
+        let tempCase = {"term": term, "caseName": cases[x].caseName, "caseLink": cases[x].caseLink};
         tempCase.caseTranscripts = await getCaseTranscripts(page, cases[x].caseLink);
-        writeFile.sync("output/" + term + "/" + cases[x].caseName.replace(" ", "-") + ".js", JSON.stringify(cases[x]));
+        writeFile.sync("output/" + term + "/" + cases[x].caseName.replace(" ", "-") + ".js", JSON.stringify(tempCase));
     }
 
     // return cases;

@@ -1,0 +1,1 @@
+{"caseName":"Emulex Corp. v. Varjabedian","caseLink":"https://www.oyez.org/cases/2018/18-459","caseTranscripts":[]}

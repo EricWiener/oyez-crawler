@@ -1,0 +1,1 @@
+{"caseName":"Cline v. Oklahoma Coalition for Reproductive Justice","caseLink":"https://www.oyez.org/cases/2013/12-1094","term":"2013"}

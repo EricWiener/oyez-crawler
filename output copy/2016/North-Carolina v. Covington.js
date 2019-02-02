@@ -1,0 +1,1 @@
+{"caseName":"North Carolina v. Covington","caseLink":"https://www.oyez.org/cases/2016/16-1023","caseTranscripts":[],"term":"2016"}

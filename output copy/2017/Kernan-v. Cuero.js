@@ -1,0 +1,1 @@
+{"caseName":"Kernan v. Cuero","caseLink":"https://www.oyez.org/cases/2017/16-1468","caseTranscripts":[],"term":"2017"}

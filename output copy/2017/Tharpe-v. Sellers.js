@@ -1,0 +1,1 @@
+{"caseName":"Tharpe v. Sellers","caseLink":"https://www.oyez.org/cases/2017/17-6075","caseTranscripts":[],"term":"2017"}

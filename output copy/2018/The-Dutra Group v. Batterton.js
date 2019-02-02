@@ -1,0 +1,1 @@
+{"caseName":"The Dutra Group v. Batterton","caseLink":"https://www.oyez.org/cases/2018/18-266","caseTranscripts":[],"term":"2018"}

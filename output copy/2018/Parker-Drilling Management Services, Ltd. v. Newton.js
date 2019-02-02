@@ -1,0 +1,1 @@
+{"caseName":"Parker Drilling Management Services, Ltd. v. Newton","caseLink":"https://www.oyez.org/cases/2018/18-389","caseTranscripts":[],"term":"2018"}
