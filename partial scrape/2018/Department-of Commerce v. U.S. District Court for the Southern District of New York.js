@@ -1,0 +1,1 @@
+{"caseName":"Department of Commerce v. U.S. District Court for the Southern District of New York","caseLink":"https://www.oyez.org/cases/2018/18-557","caseTranscripts":[],"term":"2018"}

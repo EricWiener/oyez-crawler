@@ -1,0 +1,1 @@
+{"caseName":"Bucklew v. Precythe","caseLink":"https://www.oyez.org/cases/2018/17-8151","caseTranscripts":[{"transcriptTitle":"Oral Argument - November 06, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24637","transcript":[]}],"term":"2018"}

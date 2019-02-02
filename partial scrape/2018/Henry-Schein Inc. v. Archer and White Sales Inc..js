@@ -1,0 +1,1 @@
+{"caseName":"Henry Schein Inc. v. Archer and White Sales Inc.","caseLink":"https://www.oyez.org/cases/2018/17-1272","caseTranscripts":[{"transcriptTitle":"Oral Argument - October 29, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24630","transcript":[]}],"term":"2018"}

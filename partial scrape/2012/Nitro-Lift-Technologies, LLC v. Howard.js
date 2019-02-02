@@ -1,0 +1,1 @@
+{"caseName":"Nitro-Lift Technologies, LLC v. Howard","caseLink":"https://www.oyez.org/cases/2012/11-1377","caseTranscripts":[],"term":"2012"}

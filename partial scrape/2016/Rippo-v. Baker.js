@@ -1,0 +1,1 @@
+{"caseName":"Rippo v. Baker","caseLink":"https://www.oyez.org/cases/2016/16-6316","caseTranscripts":[],"term":"2016"}

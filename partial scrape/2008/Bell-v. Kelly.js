@@ -1,0 +1,1 @@
+{"caseName":"Bell v. Kelly","caseLink":"https://www.oyez.org/cases/2008/07-1223","caseTranscripts":[{"transcriptTitle":"Oral Argument - November 12, 2008","transcriptLink":"https://apps.oyez.org/player/#/roberts2/oral_argument_audio/21932","transcript":[]}],"term":"2008"}

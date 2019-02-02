@@ -1,0 +1,1 @@
+{"caseName":"Hardy v. Cross","caseLink":"https://www.oyez.org/cases/2011/11-74","caseTranscripts":[],"term":"2011"}

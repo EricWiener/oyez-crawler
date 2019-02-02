@@ -92,13 +92,15 @@ async function scrapeOyez() {
         // let there to handle async looping
         // https://codeburst.io/asynchronous-code-inside-an-array-loop-c5d704006c99
         for (let x = 0; x < results.length; ++x) {
-            console.log(x + "/" + results.length);
-            cases = await getCases(page, results[x].termLink);
+            console.log("Term: " + (x+1) + "/" + results.length + ": " + results[x].term);
+            await getCases(page, results[x].termLink, results[x].term);
+            // cases = await getCases(page, results[x].termLink, results[x].term);
             // results[x].cases = await getCases(page, results[x].termLink);
-            for(y = 0; y < cases.length; ++y){
-                cases[y].term = results[x].term;
-                writeFile.sync("output/" + results[x].term + "/" + cases[y].caseName.replace(" ", "-") + ".js", JSON.stringify(cases[y]));
-            }
+
+            // for(y = 0; y < cases.length; ++y){
+            //     cases[y].term = results[x].term;
+            //     writeFile.sync("output/" + results[x].term + "/" + cases[y].caseName.replace(" ", "-") + ".js", JSON.stringify(cases[y]));
+            // }
         }
 
         // close browser
@@ -110,15 +112,10 @@ async function scrapeOyez() {
     }
 }
 
-async function test() {
-    console.log("test");
-    return;
-}
-
 // scrapes all the cases of the page of a term
 // recieves url of the term page
 // returns list of all cases on page
-async function getCases(page, url) {
+async function getCases(page, url, term) {
     let cases = [];
     await page.goto(url); // goes to the term page
     await page.waitForSelector("body > div > div > div.page.ng-scope > main > article > div > ng-include > ul > li:nth-child(1) > h2 > a");
@@ -142,11 +139,13 @@ async function getCases(page, url) {
     // this is done outside of .each loop because
     // .each loop doesn't support async
     for (let x = 0; x < cases.length; ++x) {
-        console.log("Cases: " + x + "/" + cases.length);
-        cases[x].caseTranscripts = await getCaseTranscripts(page, cases[x].caseLink);
+        console.log("Cases: " + (x+1) + "/" + cases.length + ": " + cases[x].caseName);
+        let tempCase = cases[x];
+        tempCase.caseTranscripts = await getCaseTranscripts(page, cases[x].caseLink);
+        writeFile.sync("output/" + term + "/" + cases[x].caseName.replace(" ", "-") + ".js", JSON.stringify(cases[x]));
     }
 
-    return cases;
+    // return cases;
 }
 
 // identifies the media links
@@ -180,7 +179,7 @@ async function getCaseTranscripts(page, url) {
         // this is done outside of .each loop because
         // .each loop doesn't support async
         for (let x = 0; x < caseTranscripts.length; ++x) {
-            console.log("Case transcripts: " + x + "/" + caseTranscripts.length);
+            console.log("Case transcripts: " + (x+1) + "/" + caseTranscripts.length + ": " + caseTranscripts[x].transcriptTitle);
             // caseTranscripts[x].transcript = "Test transcript";
             caseTranscripts[x].transcript = await getTranscript(page, caseTranscripts[x].transcriptLink);
         }
@@ -199,10 +198,11 @@ async function getTranscript(page, url) {
 
     await page.goto(url); // opens up the transcript
 
-    // wait for the title to load - indication it worked
-    await page.waitForSelector("body > div.container > div > div > article > h1");
+    // wait for the seventh dialogue to load - indication it worked
+    // can assume that all court transcripts will have more than 7 dialogues
+    await page.waitForSelector("body > div.container > div > div > article > section:nth-child(3) > section:nth-child(7) > p");
     let html = await page.content();
-
+    console.log("Parsing transcript ...");
     $("article.transcript section section", html).each(function() {
         speakerName = $(this).find('h4.ng-binding').text().trim();
 

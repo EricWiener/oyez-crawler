@@ -1,0 +1,1 @@
+{"caseName":"Kisor v. Wilkie","caseLink":"https://www.oyez.org/cases/2018/18-15","caseTranscripts":[],"term":"2018"}

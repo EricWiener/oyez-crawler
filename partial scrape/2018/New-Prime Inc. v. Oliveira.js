@@ -1,0 +1,1 @@
+{"caseName":"New Prime Inc. v. Oliveira","caseLink":"https://www.oyez.org/cases/2018/17-340","caseTranscripts":[{"transcriptTitle":"Oral Argument - October 03, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts9/oral_argument_audio/24619","transcript":[]}],"term":"2018"}

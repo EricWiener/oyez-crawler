@@ -1,0 +1,1 @@
+{"caseName":"Franchise Tax Board of California v. Hyatt","caseLink":"https://www.oyez.org/cases/2018/17-1299","caseTranscripts":[{"transcriptTitle":"Oral Argument - January 09, 2019","transcriptLink":"https://apps.oyez.org/player/#/roberts10/oral_argument_audio/24793","transcript":[]}],"term":"2018"}

@@ -1,0 +1,1 @@
+{"caseName":"Stok & Associates, P.A. v. Citibank, N.A.","caseLink":"https://www.oyez.org/cases/2010/10-514","term":"2010"}

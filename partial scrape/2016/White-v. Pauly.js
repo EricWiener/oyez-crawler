@@ -1,0 +1,1 @@
+{"caseName":"White v. Pauly","caseLink":"https://www.oyez.org/cases/2016/16-67","caseTranscripts":[],"term":"2016"}

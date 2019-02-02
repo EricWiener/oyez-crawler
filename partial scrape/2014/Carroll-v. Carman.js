@@ -1,0 +1,1 @@
+{"caseName":"Carroll v. Carman","caseLink":"https://www.oyez.org/cases/2014/14-212","caseTranscripts":[],"term":"2014"}

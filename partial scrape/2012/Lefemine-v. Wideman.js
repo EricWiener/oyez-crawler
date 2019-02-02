@@ -1,0 +1,1 @@
+{"caseName":"Lefemine v. Wideman","caseLink":"https://www.oyez.org/cases/2012/12-168","caseTranscripts":[],"term":"2012"}

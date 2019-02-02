@@ -1,0 +1,1 @@
+{"caseName":"Greer v. Green Tree Servicing LLC","caseLink":"https://www.oyez.org/cases/2018/17-1351","caseTranscripts":[],"term":"2018"}

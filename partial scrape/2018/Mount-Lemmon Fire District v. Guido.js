@@ -1,0 +1,1 @@
+{"caseName":"Mount Lemmon Fire District v. Guido","caseLink":"https://www.oyez.org/cases/2018/17-587","caseTranscripts":[{"transcriptTitle":"Oral Argument - October 01, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts9/oral_argument_audio/24614","transcript":[]}],"term":"2018"}

@@ -1,0 +1,1 @@
+{"caseName":"Weyerhaeuser Company v. United States Fish and Wildlife Service","caseLink":"https://www.oyez.org/cases/2018/17-71","caseTranscripts":[{"transcriptTitle":"Oral Argument - October 01, 2018","transcriptLink":"https://apps.oyez.org/player/#/roberts9/oral_argument_audio/24615","transcript":[]}],"term":"2018"}

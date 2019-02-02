@@ -1,0 +1,1 @@
+{"caseName":"Wearry v. Cain","caseLink":"https://www.oyez.org/cases/2015/14-10008","caseTranscripts":[],"term":"2015"}

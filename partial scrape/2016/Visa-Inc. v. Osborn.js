@@ -1,0 +1,1 @@
+{"caseName":"Visa Inc. v. Osborn","caseLink":"https://www.oyez.org/cases/2016/15-961","caseTranscripts":[],"term":"2016"}

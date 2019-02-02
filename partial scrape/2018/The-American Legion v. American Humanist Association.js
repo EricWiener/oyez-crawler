@@ -1,0 +1,1 @@
+{"caseName":"The American Legion v. American Humanist Association","caseLink":"https://www.oyez.org/cases/2018/17-1717","caseTranscripts":[],"term":"2018"}
