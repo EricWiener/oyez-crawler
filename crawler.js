@@ -2,68 +2,6 @@ const puppeteer = require('puppeteer');
 const $ = require('cheerio');
 var writeFile = require('write');
 
-// class Scraper {
-//     constructor(){
-//
-//         this.results = []
-//     }
-// }
-
-
-/*
-* transcripts is an array of objects in the form
-this.results = [
-    {
-        term: "2018",
-        termLink: "https://www.oyez.org/cases/2018"
-        cases: [
-            {
-                caseName: "Air and Liquid Systems Corp. v. Devries",
-                // caseFullName: "AIR AND LIQUID SYSTEMS CORP., ET AL., Petitioners, v. ROBERTA G. DeVRIES, INDIVIDUALLY AND AS ADMINISTRATRIX OF THE ESTATE OF JOHN B. DeVRIES, DECEASED, ET AL., Respondents"
-                caseLink: "https://www.oyez.org/cases/2018/17-1104"
-                caseTranscripts: [
-                    {
-                        transcriptTitle: "Oral Argument - October 10, 2018",
-                        transcriptLink: "https://www.oyez.org/cases/2018/17-1104",
-                        transcript: [
-                            {
-                                speakerName: "John G. Roberts, Jr.",
-                                textObjs: [
-                                    {
-                                        text: "We'll hear argument next in Case 17-1104, Air and Liquid Systems versus DeVries. Mr. Dvoretzky.",
-                                        start: 0,
-                                        end: 7.48,
-                                        duration: 7.48
-                                    }
-                                ]
-                            }, // transcript[0]
-                            {
-                                speakerName: "Shay Dvoretzky",
-                                textObjs: [
-                                    {
-                                        text: "Mr. Chief Justice, and may it please the Court: Petitioners had no duty to warn about asbestos added to their equipment years or even decades after its sale.",
-                                        start: 7.48,
-                                        end: 17.52,
-                                        duration: 10.04
-                                    }, // textObjs[0]
-                                    {
-                                        text: "That follows from a well-established tort law principle: manufacturers are not liable for injuries caused by third-party goods. That tort law principle --",
-                                        start: 17.52,
-                                        end: 26.64,
-                                        duration: 9.12
-                                    } // textObjs[1]
-                                ] // textObjs
-                            }, // transcript[1]
-                        ] // transcript
-                    } // caseTranscripts[0]
-                ] // caseTranscripts
-            }, // cases[0]
-        ] // cases
-    } // results[0]
-] // results
-*/
-
-
 async function scrapeOyez(outputDir, startYear=(new Date().getFullYear()), endYear=1956) {
     let results = [];
     const url = "https://www.oyez.org/cases";
@@ -245,7 +183,7 @@ Loop through every term
       Loop through all the media links
         Parse the transcript
 
-Return object in form:
+In future possibly return object in form:
 {
   {
     term: "2018",
