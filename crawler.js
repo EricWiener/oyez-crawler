@@ -64,7 +64,7 @@ this.results = [
 */
 
 
-async function scrapeOyez() {
+async function scrapeOyez(outputDir, startYear=(new Date().getFullYear()), endYear=1956) {
     let results = [];
     const url = "https://www.oyez.org/cases";
 
@@ -91,9 +91,9 @@ async function scrapeOyez() {
         // .each loop doesn't support async
         // let there to handle async looping
         // https://codeburst.io/asynchronous-code-inside-an-array-loop-c5d704006c99
-        for (let x = 0; x < results.length && parseInt(results[x].term) >= 1956; ++x) {
+        for (let x = 0; x < results.length && parseInt(results[x].term) >= endYear && parseInt(results[x].term) <= startYear; ++x) {
             console.log("Term: " + (x+1) + "/" + results.length + ": " + results[x].term);
-            await getCases(page, results[x].termLink, results[x].term);
+            await getCases(page, results[x].termLink, results[x].term, outputDir);
 
             // cases = await getCases(page, results[x].termLink, results[x].term);
             // results[x].cases = await getCases(page, results[x].termLink);
@@ -116,7 +116,7 @@ async function scrapeOyez() {
 // scrapes all the cases of the page of a term
 // recieves url of the term page
 // returns list of all cases on page
-async function getCases(page, url, term) {
+async function getCases(page, url, term, outputDir) {
     try {
         let cases = [];
         await page.goto(url); // goes to the term page
@@ -144,7 +144,7 @@ async function getCases(page, url, term) {
             console.log("Cases: " + (x+1) + "/" + cases.length + ": " + cases[x].caseName);
             let tempCase = {"term": term, "caseName": cases[x].caseName, "caseLink": cases[x].caseLink};
             tempCase.caseTranscripts = await getCaseTranscripts(page, cases[x].caseLink);
-            writeFile.sync("output/" + term + "/" + cases[x].caseName.replace(" ", "-") + ".js", JSON.stringify(tempCase));
+            writeFile.sync(outputDir + term + "/" + cases[x].caseName.replace(" ", "-") + ".js", JSON.stringify(tempCase));
         }
     } catch(error){
         console.log("An error ocurred in getCases() for " + term + ": " + error);
