@@ -144,7 +144,7 @@ async function getCases(page, url, term, outputDir) {
             console.log("Cases: " + (x+1) + "/" + cases.length + ": " + cases[x].caseName);
             let tempCase = {"term": term, "caseName": cases[x].caseName, "caseLink": cases[x].caseLink};
             tempCase.caseTranscripts = await getCaseTranscripts(page, cases[x].caseLink);
-            writeFile.sync(outputDir + term + "/" + cases[x].caseName.replace(" ", "-") + ".js", JSON.stringify(tempCase));
+            writeFile.sync(outputDir + term + "/" + cases[x].caseName.replace(/\s/g, "_") + ".js", JSON.stringify(tempCase));
         }
     } catch(error){
         console.log("An error ocurred in getCases() for " + term + ": " + error);
