@@ -66,6 +66,7 @@ An array of `caseTranscripts` is used to allow for cases that have more than one
 
 ## Usage
 ```javascript
+// driver.js
 var crawler = require('./crawler.js');
 
 async function crawl(){
@@ -74,9 +75,9 @@ async function crawl(){
 }
 crawl();
 ```
-
 You can also optionally specify the desired start and end dates.
 ```javascript
+// driver.js
 var crawler = require('./crawler.js');
 
 async function crawl(){
@@ -89,5 +90,12 @@ async function crawl(){
 
 crawl();
 ```
+
+You can then run the script with:
+```
+$ node --max-old-space-size=8192 driver.js
+```
+The flag `--max-old-space-size=8192` is used to override node's memory limit. This is needed for cases with multiple oral arguments. 
+
 
 Please open an issue if you need any assistance using this package.
