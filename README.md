@@ -7,7 +7,7 @@ Because of the significant file size of the transcripts they are immediately sav
 You can also optionally specify the start and end years that you want to scrape to. The start year defaults to whatever the current year is. The end year defaults to 1956 (see above explanation).
 
 ## Usage
-```
+```javascript
 var crawler = require('./crawler.js')
 
 async function crawl(){
@@ -18,7 +18,7 @@ crawl();
 ```
 
 You can also optionally specify the desired start and end dates.
-```
+```javascript
 var crawler = require('./crawler.js')
 
 async function crawl(){
@@ -32,4 +32,4 @@ async function crawl(){
 crawl();
 ```
 
-Please open an issue if you need any assistance using this package. 
+Please open an issue if you need any assistance using this package.
