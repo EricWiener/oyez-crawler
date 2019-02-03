@@ -1,4 +1,4 @@
-const PUPPETEER = require('PUPPETEER');
+const PUPPETEER = require('puppeteer');
 const $ = require('cheerio');
 const WRITEFILE = require('write');
 
