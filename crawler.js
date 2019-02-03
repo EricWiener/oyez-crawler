@@ -171,11 +171,13 @@ async function getCaseTranscripts(page, url) {
         $("div.media ul li", html).each(function() {
             transcriptTitle = $(this).find('a').text().trim();
             transcriptLink = $(this).find('a').attr('iframe-url');
-
-            caseTranscripts.push({
-                "transcriptTitle": transcriptTitle,
-                "transcriptLink": transcriptLink,
-            });
+            if(transcriptTitle.includes("Oral Argument")){
+                // exclude non oral arguments from being included in the parse
+                caseTranscripts.push({
+                    "transcriptTitle": transcriptTitle,
+                    "transcriptLink": transcriptLink,
+                });
+            }
         });
 
         // loop through transcripts for a case
@@ -191,9 +193,9 @@ async function getCaseTranscripts(page, url) {
 
     } catch (error) {
         console.log("There is no media for this transcript.", error)
+        return caseTranscripts;
     }
     // if there is no media, just returns an empty list
-
 }
 
 
