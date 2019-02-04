@@ -30,9 +30,15 @@ async function scrapeOyez(outputDir, startYear = (new Date().getFullYear()), end
         // .each loop doesn't support async
         // let there to handle async looping
         // https://codeburst.io/asynchronous-code-inside-an-array-loop-c5d704006c99
-        for (let x = 0; x < results.length && parseInt(results[x].term) >= endYear && parseInt(results[x].term) <= startYear; ++x) {
-            console.log(`Term: ${x + 1}/${results.length}: ${results[x].term}`);
-            await getCases(page, results[x].termLink, results[x].term, outputDir);
+        for (let x = 0; x < results.length && parseInt(results[x].term) >= endYear; ++x) {
+            if(parseInt(results[x].term) <= startYear){
+                // if the year is before or equal to the start year
+                // this is not part of the loop expression because otherwise it would terminate
+                // if the current year was before the start year and would not
+                // evaluate anything else 
+                console.log(`Term: ${x + 1}/${results.length}: ${results[x].term}`);
+                await getCases(page, results[x].termLink, results[x].term, outputDir);
+            }
         }
 
         // close browser
