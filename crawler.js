@@ -35,7 +35,7 @@ async function scrapeOyez(outputDir, startYear = (new Date().getFullYear()), end
                 // if the year is before or equal to the start year
                 // this is not part of the loop expression because otherwise it would terminate
                 // if the current year was before the start year and would not
-                // evaluate anything else 
+                // evaluate anything else
                 console.log(`Term: ${x + 1}/${results.length}: ${results[x].term}`);
                 await getCases(page, results[x].termLink, results[x].term, outputDir);
             }
@@ -107,14 +107,20 @@ async function getCases(page, url, term, outputDir) {
 }
 
 // identifies the media links
-// calls the
+// returns empty array if error 
 async function getCaseTranscripts(page, url) {
     let caseTranscripts = []
 
     await page.goto(url); // goes to the case page
 
-    // wait for the case name to load - gives an indication the page is loaded
-    await page.waitForSelector("body > div > div > div.page.ng-scope > main > div > div > div > h1");
+    try{
+        // wait for the case name to load - gives an indication the page is loaded
+        await page.waitForSelector("body > div > div > div.page.ng-scope > main > div > div > div > h1");
+    }catch (error){
+        console.log(`Invalid page: ${url}. Error: ${error}`);
+        return caseTranscripts;
+    }
+
 
     try {
         // wait for list of media to load
