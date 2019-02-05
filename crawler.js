@@ -1,12 +1,18 @@
 const PUPPETEER = require('puppeteer');
 const $ = require('cheerio');
-const WRITEFILE = require('write');
+// const WRITEFILE = require('write');
+const fs = require('fs')
+
+let ERRORLOG;
 
 async function scrapeOyez(outputDir, {startYear = (new Date().getFullYear()), endYear = 1956, defaultTimeout = 30000} = {}) {
     console.log(`scrapeOyez running with parameters:`);
     console.log(`Start year: ${startYear}`);
     console.log(`End year: ${endYear}`);
     console.log(`Default timeout: ${defaultTimeout}`);
+    ERRORLOG = fs.createWriteStream(`${outputDir}errors.txt`);
+    process.stderr.write = ERRORLOG.write.bind(ERRORLOG);
+    console.log(`Errors are now being written to: ${outputDir}errors.txt`);
 
     let results = [];
     const url = "https://www.oyez.org/cases";
@@ -50,7 +56,9 @@ async function scrapeOyez(outputDir, {startYear = (new Date().getFullYear()), en
         // close browser
         browser.close();
     } catch (error) {
-        console.log(`scrapeOyez(): Error occurred while finding URL's for individual terms: ${error}`);
+        let message = `scrapeOyez(): Error occurred while finding URL's for individual terms: ${error}`
+        console.log(message);
+        console.error(message);
     }
 }
 
@@ -73,7 +81,9 @@ async function getCases(page, url, term, outputDir) {
         // goes to the term page
         await page.goto(url);
     } catch(error){
-        console.log(`getCases(): Unable to navigate to ${url}`);
+        let message = `getCases(): Unable to navigate to ${url}`;
+        console.log(message);
+        console.error(message);
     }
 
     try {
@@ -99,42 +109,87 @@ async function getCases(page, url, term, outputDir) {
             let tempCase = {
                 "term": term,
                 "caseName": cases[x].caseName,
-                "caseLink": cases[x].caseLink
+                "caseLink": cases[x].caseLink,
             };
-            tempCase.caseTranscripts = await getCaseTranscripts(page, cases[x].caseLink);
-            WRITEFILE.sync(`${outputDir}${term}/${cases[x].caseName.replace(/\s/g, "_")}.js`, JSON.stringify(tempCase));
+
+            // unpack values
+            [tempCase.decidedBy, tempCase.arguedOn, tempCase.petitioner, tempCase.respondent, tempCase.caseTranscripts] = await getCaseTranscripts(page, cases[x].caseLink);
+
+            // write file
+            fs.writeFile(`${outputDir}${term}/${cases[x].caseName.replace(/\s/g, "_")}.js`,JSON.stringify(tempCase), (err) => {
+                if (err) {
+                console.error(err)
+                }
+                //file written successfully
+            })
         }
     } catch (error) {
-        console.log(`getCases(): An error ocurred for ${term}: ${error}`);
+        let message = `getCases(): An error ocurred for ${term}: ${error}`;
+        console.log(message);
+        console.error(message);
     }
 }
 
 // identifies the media links
 // returns empty array if error
+// also returns decidedBy, arguedOn, petitioner, and respondent
+// returns array in form:
+// [decidedBy, arguedOn, petitioner, respondent, caseTranscripts]
 async function getCaseTranscripts(page, url) {
     let caseTranscripts = []
+    let decidedBy = "";
+    let arguedOn = "";
+    let petitioner = "";
+    let respondent = "";
 
     try {
         // goes to the case page
         await page.goto(url);
     } catch (error){
-        console.log(`getCaseTranscripts(): Unable to go to ${url}`);
+        let message = `getCaseTranscripts(): Unable to go to ${url}`;
+        console.log(message);
+        console.error(message);
     }
 
 
     try{
         // wait for the case name to load - gives an indication the page is loaded
         await page.waitForSelector("body > div > div > div.page.ng-scope > main > div > div > div > h1");
-    }catch (error){
-        console.log(`getCaseTranscripts(): Invalid page: ${url}. Error: ${error}`);
-        return caseTranscripts;
-    }
+        let html = await page.content();
+        // get decidedBy, arguedOn, petitioner, respondent
+        decidedBy = $('h3', html).filter(function() {
+            return $(this).text().trim() === 'Decided by';
+        }).parent().text().replace('Decided by','').trim();
 
+        arguedOn = $('h3', html).filter(function() {
+            return $(this).text().trim() === 'Argued';
+        }).parent().find('div').text().trim();
+
+        petitioner = $('h3', html).filter(function() {
+            return $(this).text().trim() === 'Petitioner';
+        }).parent().text().replace('Petitioner','').trim();
+
+        respondent = $('h3', html).filter(function() {
+            return $(this).text().trim() === 'Respondent';
+        }).parent().text().replace('Respondent','').trim();
+
+        console.log(`Decided by: ${decidedBy}`);
+        console.log(`Argued on: ${arguedOn}`);
+        console.log(`Petitioner: ${petitioner}`);
+        console.log(`Respondent: ${respondent}`);
+
+    }catch (error){
+        let message = `getCaseTranscripts(): Invalid page: ${url}. Error: ${error}`;
+        console.log(message);
+        console.error(message);
+
+        return [decidedBy, arguedOn, petitioner, respondent, caseTranscripts];
+    }
 
     try {
         // wait for list of media to load
         await page.waitForSelector('body > div > div > div.page.ng-scope > main > div > div > div > div > div > div.media > ul')
-        let html = await page.content();
+        html = await page.content();
 
         // get the media links
         $("div.media ul li", html).each(function () {
@@ -156,7 +211,9 @@ async function getCaseTranscripts(page, url) {
         // this is done outside of .each loop because
         // .each loop doesn't support async
         if(caseTranscripts.length == 0){
-            console.log(`There is no media for this transcript.`)
+            let message = `There is no media for this transcript: ${url}.`;
+            console.log(message);
+            console.error(message);
         }else{
             for (let x = 0; x < caseTranscripts.length; ++x) {
                 console.log(`Case transcripts: ${x + 1}/${caseTranscripts.length}: ${caseTranscripts[x].transcriptTitle}`);
@@ -164,13 +221,15 @@ async function getCaseTranscripts(page, url) {
             }
         }
 
-        return caseTranscripts;
+        return [decidedBy, arguedOn, petitioner, respondent, caseTranscripts];
+;
 
     } catch (error) {
-        console.log(`There is no media for this transcript ${error}`);
-
+        let message = `There is no media for this transcript (${url}) ${error}`;
+        console.log(message);
+        console.error(message);
         // if there is no media, just returns an empty list
-        return caseTranscripts;
+        return [caseTranscripts, decidedBy, arguedOn, petitioner, respondent];
     }
 
 }
@@ -182,7 +241,9 @@ async function getTranscript(page, url) {
     try {
         await page.goto(url); // opens up the transcript
     } catch (error){
-        console.log(`getTranscript(): Error occurred navigating to ${url}`);
+        let message = `getTranscript(): Error occurred navigating to ${url}`;
+        console.log(message);
+        console.error(message);
         return transcript;
     }
 
@@ -192,7 +253,9 @@ async function getTranscript(page, url) {
     try {
         await page.waitForSelector("body > div.container > div > div > article > section:nth-child(3) > section:nth-child(1) > p");
     }catch (error){
-        console.log(`getTranscript: Unable to load transcript at ${url}`);
+        let message = `getTranscript: Unable to load transcript at ${url}`;
+        console.log(message);
+        console.error(message);
         return transcript;
     }
     let html = await page.content();
