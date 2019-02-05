@@ -74,7 +74,10 @@ async function getCases(page, url, term, outputDir) {
 
         let cases = [];
     try{
-        await page.goto(url); // goes to the term page
+        // goes to the term page
+        // no timeout value. Will keep waiting
+        // This is garunteed to exist 
+        await page.goto(url, {timeout: 0});
     } catch(error){
         console.log(`getCases(): Unable to navigate to ${url}`);
     }
