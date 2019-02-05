@@ -44,7 +44,7 @@ async function scrapeOyez(outputDir, startYear = (new Date().getFullYear()), end
         // close browser
         browser.close();
     } catch (error) {
-        console.log(`Error occurred while finding URL's for individual terms: ${error}`);
+        console.log(`scrapeOyez(): Error occurred while finding URL's for individual terms: ${error}`);
     }
 }
 
@@ -71,9 +71,15 @@ CALLS:
  * @template TYPE
  */
 async function getCases(page, url, term, outputDir) {
-    try {
+
         let cases = [];
+    try{
         await page.goto(url); // goes to the term page
+    } catch(error){
+        console.log(`getCases(): Unable to navigate to ${url}`);
+    }
+
+    try {
         await page.waitForSelector("body > div > div > div.page.ng-scope > main > article > div > ng-include > ul > li:nth-child(1) > h2 > a");
         let html = await page.content();
 
@@ -102,22 +108,27 @@ async function getCases(page, url, term, outputDir) {
             WRITEFILE.sync(`${outputDir}${term}/${cases[x].caseName.replace(/\s/g, "_")}.js`, JSON.stringify(tempCase));
         }
     } catch (error) {
-        console.log(`An error ocurred in getCases() for ${term}: ${error}`);
+        console.log(`getCases(): An error ocurred for ${term}: ${error}`);
     }
 }
 
 // identifies the media links
-// returns empty array if error 
+// returns empty array if error
 async function getCaseTranscripts(page, url) {
     let caseTranscripts = []
 
-    await page.goto(url); // goes to the case page
+    try {
+        await page.goto(url); // goes to the case page
+    } catch (error){
+        console.log(`getCaseTranscripts(): Unable to go to ${url}`);
+    }
+
 
     try{
         // wait for the case name to load - gives an indication the page is loaded
         await page.waitForSelector("body > div > div > div.page.ng-scope > main > div > div > div > h1");
     }catch (error){
-        console.log(`Invalid page: ${url}. Error: ${error}`);
+        console.log(`getCaseTranscripts(): Invalid page: ${url}. Error: ${error}`);
         return caseTranscripts;
     }
 
