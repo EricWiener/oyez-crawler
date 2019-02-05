@@ -53,6 +53,7 @@ async function scrapeOyez(outputDir, {startYear = (new Date().getFullYear()), en
 }
 
 /*
+Scrapes all the cases of the page of a term
 RECIEVES:
     * PUPPETEER page
     * URL of the case's home page
@@ -63,17 +64,6 @@ EFFECTS:
 CALLS:
     * getCaseTranscripts(page, media link)
 */
-// scrapes all the cases of the page of a term
-// recieves url of the term page
-//
-
-/**
- * Demonstrates how top-level functions follow the same rules.  This one
- * makes an array.
- * @param {TYPE} arg
- * @return {!Array<TYPE>}
- * @template TYPE
- */
 async function getCases(page, url, term, outputDir) {
 
         let cases = [];
@@ -163,9 +153,13 @@ async function getCaseTranscripts(page, url) {
         // gets the transcripts for each case and appends to case object
         // this is done outside of .each loop because
         // .each loop doesn't support async
-        for (let x = 0; x < caseTranscripts.length; ++x) {
-            console.log(`Case transcripts: ${x + 1}/${caseTranscripts.length}: ${caseTranscripts[x].transcriptTitle}`);
-            caseTranscripts[x].transcript = await getTranscript(page, caseTranscripts[x].transcriptLink);
+        if(caseTranscripts.length == 0){
+            console.log(`There is no media for this transcript.`)
+        }else{
+            for (let x = 0; x < caseTranscripts.length; ++x) {
+                console.log(`Case transcripts: ${x + 1}/${caseTranscripts.length}: ${caseTranscripts[x].transcriptTitle}`);
+                caseTranscripts[x].transcript = await getTranscript(page, caseTranscripts[x].transcriptLink);
+            }
         }
 
         return caseTranscripts;
