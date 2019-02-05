@@ -22,6 +22,7 @@ async function scrapeOyez(outputDir, {startYear = (new Date().getFullYear()), en
             link = $(this).find('a').attr('href');
             term = link.split("/")[1];
             link = `https://www.oyez.org/${link}`;
+            console.log(`Found term: ${term}`);
 
             results.push({
                 "term": term,
