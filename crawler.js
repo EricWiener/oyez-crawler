@@ -7,6 +7,7 @@ async function scrapeOyez(outputDir, {startYear = (new Date().getFullYear()), en
     console.log(`Start year: ${startYear}`);
     console.log(`End year: ${endYear}`);
     console.log(`Default timeout: ${defaultTimeout}`);
+
     let results = [];
     const url = "https://www.oyez.org/cases";
 
@@ -186,10 +187,10 @@ async function getTranscript(page, url) {
     }
 
 
-    // wait for the seventh dialogue to load - indication it worked
-    // can assume that all court transcripts will have more than 7 dialogues
+    // wait for the first dialogue to load - indication it worked
+    // can assume that all court transcripts will have at least one dialogue
     try {
-        await page.waitForSelector("body > div.container > div > div > article > section:nth-child(3) > section:nth-child(7) > p");
+        await page.waitForSelector("body > div.container > div > div > article > section:nth-child(3) > section:nth-child(1) > p");
     }catch (error){
         console.log(`getTranscript: Unable to load transcript at ${url}`);
         return transcript;
