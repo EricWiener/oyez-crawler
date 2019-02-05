@@ -214,7 +214,7 @@ async function getTranscript(page, url) {
                 "text": text,
                 "start": start,
                 "stop": stop,
-                "duration": stop - start,
+                "duration": duration,
             });
 
         }); // .each for paragraphs
