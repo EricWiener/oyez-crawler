@@ -6,7 +6,7 @@ Because of the significant file size of the transcripts they are immediately sav
 
 The file names are the title of the transcript with all spaces replaced with underscores. This was done to avoid conflicts with hyphens that occurred in the titles originally.
 
-You can also optionally specify the start and end years that you want to scrape to. The start year defaults to whatever the current year is. The end year defaults to 1956 (see above explanation).
+You can also optionally specify the start and end years that you want to scrape to. The start year defaults to whatever the current year is. The end year defaults to 1956 (see above explanation). It is also possible to specify the default timeout value for requests (set the value to `0` for unlimited timeouts).
 
 The files are saved in JSON in the form:
 ```javascript
@@ -83,19 +83,21 @@ var crawler = require('./crawler.js');
 async function crawl(){
     outputPath = "~/Downloads/transcripts/";
 
-    // start in 2015 (inclusively)
-    // end in 1980 (inclusively)
-    await crawler.scrapeOyez(outputPath, 2015, 1980);
+    await crawler.scrapeOyez(outputPath, {
+        startYear: 2015, // start in 2015 (inclusively)
+        endYear: 1980, // end in 1980 (inclusively)
+        defaultTimeout: 0 // no time out
+    });
 }
 
 crawl();
 ```
 
-You can then run the script with:
+If you run into issues with the javascript heap being overfilled, use the flag `--max-old-space-size=8192` as seen below. You shouldn't run into issues with this usually (cases are saved to files instead of being stored on the heap).
 ```
 $ node --max-old-space-size=8192 driver.js
 ```
-The flag `--max-old-space-size=8192` is used to override node's memory limit. This is needed for cases with multiple oral arguments. 
+The flag `--max-old-space-size=8192` is used to override node's memory limit. This may be needed for cases with multiple oral arguments.
 
 
 Please open an issue if you need any assistance using this package.

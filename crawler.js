@@ -2,13 +2,17 @@ const PUPPETEER = require('puppeteer');
 const $ = require('cheerio');
 const WRITEFILE = require('write');
 
-async function scrapeOyez(outputDir, startYear = (new Date().getFullYear()), endYear = 1956) {
+async function scrapeOyez(outputDir, {startYear = (new Date().getFullYear()), endYear = 1956, defaultTimeout = 30000} = {}) {
+    console.log(`scrapeOyez running with parameters:`);
+    console.log(`Start year: ${startYear}`);
+    console.log(`End year: ${endYear}`);
+    console.log(`Default timeout: ${defaultTimeout}`);
     let results = [];
     const url = "https://www.oyez.org/cases";
 
     try {
         // ======= find all links to terms ============
-        const browser = await PUPPETEER.launch();
+        const browser = await PUPPETEER.launch({timeout: defaultTimeout});
         let page = await browser.newPage();
         await page.goto(url);
         await page.waitForSelector("div.full-sidebar");
@@ -75,9 +79,7 @@ async function getCases(page, url, term, outputDir) {
         let cases = [];
     try{
         // goes to the term page
-        // no timeout value. Will keep waiting
-        // This is garunteed to exist 
-        await page.goto(url, {timeout: 0});
+        await page.goto(url);
     } catch(error){
         console.log(`getCases(): Unable to navigate to ${url}`);
     }
@@ -121,7 +123,8 @@ async function getCaseTranscripts(page, url) {
     let caseTranscripts = []
 
     try {
-        await page.goto(url); // goes to the case page
+        // goes to the case page
+        await page.goto(url);
     } catch (error){
         console.log(`getCaseTranscripts(): Unable to go to ${url}`);
     }
@@ -180,11 +183,22 @@ async function getCaseTranscripts(page, url) {
 async function getTranscript(page, url) {
     let transcript = [];
 
-    await page.goto(url); // opens up the transcript
+    try {
+        await page.goto(url); // opens up the transcript
+    } catch (error){
+        console.log(`getTranscript(): Error occurred navigating to ${url}`);
+        return transcript;
+    }
+
 
     // wait for the seventh dialogue to load - indication it worked
     // can assume that all court transcripts will have more than 7 dialogues
-    await page.waitForSelector("body > div.container > div > div > article > section:nth-child(3) > section:nth-child(7) > p");
+    try {
+        await page.waitForSelector("body > div.container > div > div > article > section:nth-child(3) > section:nth-child(7) > p");
+    }catch (error){
+        console.log(`getTranscript: Unable to load transcript at ${url}`);
+        return transcript;
+    }
     let html = await page.content();
 
     console.log("Parsing transcript ...");
