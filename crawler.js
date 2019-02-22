@@ -11,9 +11,12 @@ async function scrapeOyez(outputDir, {startYear = (new Date().getFullYear()), en
     console.log(`Start year: ${startYear}`);
     console.log(`End year: ${endYear}`);
     console.log(`Default timeout: ${defaultTimeout}`);
-    ERRORLOG = fs.createWriteStream(`${outputDir}errors.txt`);
+    if (!fs.existsSync('output')){
+    fs.mkdirSync('output');
+    }
+    ERRORLOG = fs.createWriteStream(`${outputDir}/errors-${endYear}-${startYear}.txt`);
     process.stderr.write = ERRORLOG.write.bind(ERRORLOG);
-    console.log(`Errors are now being written to: ${outputDir}errors-${startYear}-${endYear}.txt`);
+    console.log(`Errors are now being written to: ${outputDir}errors-${endYear}-${startYear}.txt`);
 
     let results = [];
     const url = "https://www.oyez.org/cases";
