@@ -13,7 +13,7 @@ async function scrapeOyez(outputDir, {startYear = (new Date().getFullYear()), en
     console.log(`Default timeout: ${defaultTimeout}`);
     ERRORLOG = fs.createWriteStream(`${outputDir}errors.txt`);
     process.stderr.write = ERRORLOG.write.bind(ERRORLOG);
-    console.log(`Errors are now being written to: ${outputDir}errors.txt`);
+    console.log(`Errors are now being written to: ${outputDir}errors-${startYear}-${endYear}.txt`);
 
     let results = [];
     const url = "https://www.oyez.org/cases";

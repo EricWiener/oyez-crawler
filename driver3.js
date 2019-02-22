@@ -5,7 +5,8 @@ async function crawl(url){
     await crawler.scrapeOyez(outputPath,
         {
             defaultTimeout: 0,
-            startYear: 2019
+            startYear: 1999,
+            endYear: 1990
         }
     );
 }
