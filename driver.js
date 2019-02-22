@@ -4,7 +4,8 @@ async function crawl(url){
     outputPath = "output/"
     await crawler.scrapeOyez(outputPath,
         {
-            defaultTimeout: 0
+            defaultTimeout: 0,
+            startYear: 2015
         }
     );
 }
