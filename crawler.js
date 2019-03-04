@@ -121,7 +121,7 @@ async function getCases(page, url, term, outputDir) {
             Object.assign(tempCase, additionalData);
 
             // write file
-            fsPath.writeFile(`${outputDir}${term}/${cases[x].caseName.replace(/\s/g, "_")}.js`, JSON.stringify(tempCase), (err) => {
+            fsPath.writeFile(`${outputDir}${term}/${cases[x].caseName.replace(/\s/g, "_").replace("/", "+")}.js`, JSON.stringify(tempCase), (err) => {
               if(err) {
                 console.log(err);
               } else {
