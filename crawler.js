@@ -306,7 +306,7 @@ async function getTranscript(page, url) {
 
         let textObjs = []
 
-        $("p", this).each(() => {
+        $(this).find("p").each(function() {
             let text = $(this).text().trim();
             let start = parseFloat($(this).attr('start-time').trim());
             let stop = parseFloat($(this).attr('stop-time').trim());
