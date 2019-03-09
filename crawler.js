@@ -321,6 +321,10 @@ async function getTranscript(page, url) {
 
         }); // .each for paragraphs
 
+        if(speakerName == ""){
+            speakerName = "UNKNOWN";
+        }
+
         transcript.push({
             "speakerName": speakerName,
             "textObjs": textObjs
